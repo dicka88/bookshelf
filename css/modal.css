@@ -1,0 +1,37 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  transition: 0.2s ease-out;
+  opacity: 0;
+}
+
+.modal.show {
+  visibility: visible;
+  opacity: 100%;
+}
+
+.modal .modal-dialog {
+  max-width: 400px;
+  width: 100%;
+  min-width: 400px;
+  background-color: white;
+  border-radius: 8px;
+}
+.modal.modal-medium .modal-dialog {
+  max-width: 768px;
+}
+.modal .modal-dialog .modal-header {
+  padding: 1em;
+  border-bottom: 1px solid #e8e8e8;
+}
+.modal .modal-dialog .modal-body {
+  padding: 1em;
+}

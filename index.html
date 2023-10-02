@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RakBook</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/button.css">
+  <link rel="stylesheet" href="./css/card.css">
+  <link rel="stylesheet" href="./css/form.css">
+  <link rel="stylesheet" href="./css/modal.css">
+  <link rel="stylesheet" href="./css/utility.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+  <main>
+    <div class="app-header">
+      <div class="container">
+        <h2 class="app-title">RakBook</h2>
+        <p class="app-description">Note your reading book</p>
+      </div>
+    </div>
+
+    <div class="app-body">
+      <div class="container">
+        <div class="toolbar flex gap-2">
+          <button class="primary" toggle-modal modal-id="modal-add-book">Add a book</button>
+        </div>
+
+        <div class="book-finder">
+          <form action="" id="form-book-search">
+            <div>
+              <h4 class="mb-2">Search a book</h4>
+              <div class="flex gap-2">
+                <input type="text" name="search" placeholder="Enter keyword title or author or year or description">
+                <button class="primary">
+                  <i class="bi-search"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <h4 class="mb-4" id="book-total">Book Total: 0</h4>
+          <div class="books">
+            <div class="card">
+              <div class="card-header">
+                <strong id="book-uncompleted-count"></strong>
+              </div>
+              <div class="card-body book-lists" id="bookshelf-uncompleted">
+
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <strong id="book-completed-count"></strong>
+              </div>
+              <div class="card-body book-lists" id="bookshelf-completed">
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        Copyright - Dicka Ismaji
+      </p>
+    </div>
+  </footer>
+
+  <div class="modal modal-medium" id="modal-add-book">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h4>Add new book</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-container">
+          <div class="flex-auto">
+            <form action="" id="form-add-book">
+              <div>
+                <label for="">Book Title</label>
+                <div>
+                  <input type="text" name="title" placeholder="Enter Book Title">
+                </div>
+              </div>
+              <div>
+                <label for="">Book Cover Url (Optional)</label>
+                <div>
+                  <input type="text" name="coverUrl" placeholder="Ex: https://unsplash.com/bookcover.png">
+                </div>
+              </div>
+              <div>
+                <label for="">Description</label>
+                <div>
+                  <textarea name="description" placeholder="Enter boook description"></textarea>
+                </div>
+              </div>
+              <div>
+                <label for="">Author</label>
+                <div>
+                  <input type="text" name="author" placeholder="Enter Book Author Name">
+                </div>
+              </div>
+              <div>
+                <label for="">Year</label>
+                <div>
+                  <input type="number" name="year" placeholder="Enter Book Year">
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="">Completed</label>
+                <div class="flex">
+                  <div class="flex">
+                    <input type="radio" value="yes" name="isComplete" id="completed-yes">
+                    <label for="completed-yes">Yes</lab>
+                  </div>
+                  <div class="flex">
+                    <input type="radio" value="no" name="isComplete" id="completed-no" checked>
+                    <label for="completed-no">No</lab>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button class="primary lg" type="submit">Add Now</button>
+                <button class="lg" type="button" toggle-modal>Cancel</button>
+              </div>
+            </form>
+          </div>
+          <div class="book-cover">
+            <img id="book-cover-preview" src="./img/cover-placeholder.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-delete-book">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h4>Are you sure to remove this book?</h4>
+      </div>
+      <div class="modal-body">
+        <div class="mb-4">
+          <p>The book will removed permanently</p>
+        </div>
+        <div class="" style="text-align: right;">
+          <button class="primary" id="modal-delete-book-submit">Yes, delete it</button>
+          <button toggle-modal>Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/modal.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
